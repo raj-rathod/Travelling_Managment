@@ -1,0 +1,134 @@
+.signup-content {
+    // position: absolute;
+    width: 562px;
+    margin-right: 0px;
+    background: rgba(177, 135, 77, 0.75);
+    float: right;
+    
+}
+.signup-form {
+    padding: 54px 80px 36px 55px;
+}
+
+.form-group {
+    margin-bottom: 23px;
+}
+input {
+    border: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid $border-color;
+    background: transparent;
+    width: 100%;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Poppins';
+    font-size: 14px;
+    padding: 3px 0;
+    &::-webkit-input-placeholder {
+        font-weight: 400;
+        color: #fff;
+	}
+	&::-moz-placeholder {
+        font-weight: 400;
+        color: #fff;
+	}
+	&:-ms-input-placeholder {
+        font-weight: 400;
+        color: #fff;
+	}
+	&:-moz-placeholder {
+        font-weight: 400;
+        color: #fff;
+    }
+    &:focus {
+        font-weight: bold;
+    }
+}
+.field-icon {
+    float: right;
+    margin-right: 0px;
+    margin-top: -22px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+input[type=checkbox]:not(old){
+    width     : 2em;
+    margin    : 0;
+    padding   : 0;
+    font-size : 1em;
+    display: none;
+  }
+  input[type=checkbox]:not(old) + label{
+      display      : inline-block;
+      margin-bottom: 25px;
+  }
+  input[type=checkbox]:not(old) + label > span{
+    display          : inline-block;
+    width            : 13px;
+    height           : 13px;
+    margin-right: 15px;
+    margin-bottom: 4px;
+    border           : 1px solid #fff;
+    @include border-radius(2px);
+    background       : transparent;
+    vertical-align   : bottom;
+  }
+  input[type=checkbox]:not(old):checked + label > span,{
+    background       : transparent;
+  }
+  input[type=checkbox]:not(old):checked + label > span:before{
+      content     : '\f26b';
+      display     : block;
+      color       : #fff;
+      font-size   : 11px;
+      line-height : 1.2;
+      text-align  : center;
+      font-family: 'Material-Design-Iconic-Font';
+      font-weight: bold;
+}
+.label-agree-term {
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff;
+}
+.term-service {
+    color: #fff; 
+}
+.form-submit {
+    width: auto;
+    display: inline-block;
+    border: none;
+    background: #fff;
+    color: $brown-color;
+    padding: 10px;
+    height: 50px;
+    @include box-shadow(0px 15px 9.9px 0.1px rgba(0, 0, 0, 0.15));
+    margin-right: 25px;
+    &:hover {
+        background-color: darken(#fff, 10%)
+    }
+}
+.submit {
+    width: 130px;
+    @include border-radius(25px);
+    text-transform: uppercase;
+    
+    font-size: 13px;
+    cursor: pointer;
+}
+.submit-link {
+    border: 2px solid #fff;
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 12px 0;
+    text-align: center;
+    color: #fff;
+    &:hover {
+        background: #fff;
+        color: $brown-color;
+    }
+}
+  

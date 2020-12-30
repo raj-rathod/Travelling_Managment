@@ -1,0 +1,26 @@
+
+@media screen and (max-width: 992px) {
+    .container {
+        width: calc( 100% - 30px);
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .signup-content {
+        width: 100%;
+    }
+}
+
+
+//end 480px
+@media screen and (max-width: 480px) {
+    .submit {
+        width: 100%;
+    }
+    .form-submit {
+        margin-bottom: 20px;
+        margin-right: 0px;
+    }
+    .signup-form {
+        padding: 54px 30px 36px 30px;
+    }
+}
