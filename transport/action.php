@@ -214,12 +214,14 @@ if (isset($_POST['booking'])) {
           $sql="SELECT * FROM ticket WHERE uid='$uid'AND pname='$name'AND jdate='$jid' AND bus_id='$bid'  ";
           $run=mysqli_query($con,$sql);
           if (mysqli_num_rows($run)>0) {
-          	echo "Your ticket is ALREADY booked  please your ticket";
+          	echo "Your ticket is ALREADY booked, please check your ticket";
+            
           }else{
           $sql="INSERT INTO `ticket` (`tid`, `bus_id`, `uid`, `seat_no`, `no_seat`, `ticket_status`, `jdate`, `booking_date`, `pname`) VALUES (NULL, '$bid', '$uid', '$tseatno', '$no_p', 'Conform', '$jid', '$date', '$name')";
           $run=mysqli_query($con,$sql);
           if ($run) {
              echo "Your Ticket is Conformed .....Thank you";
+             
           }
 
         }
@@ -246,11 +248,13 @@ if (isset($_POST['booking'])) {
           $run=mysqli_query($con,$sql);
           if (mysqli_num_rows($run)>0) {
           	echo "Your ticket is ALREADY booked  please your ticket";
+          
           }else{
           $sql="INSERT INTO `ticket` (`tid`, `bus_id`, `uid`, `seat_no`, `no_seat`, `ticket_status`, `jdate`, `booking_date`, `pname`) VALUES (NULL, '$bid', '$uid', '$tseatno', '$no_p', 'Conform', '$jid', '$date', '$name')";
           $run=mysqli_query($con,$sql);
           if ($run) {
              echo "Your Ticket is Conformed .....Thank you";
+            
           }
 
       }
@@ -370,9 +374,11 @@ if (isset($_POST['bkd'])) {
    $sql2="SELECT * FROM bus_details WHERE bus_id='$bid'";
           $run2=mysqli_query($con,$sql2);
           $row1=mysqli_fetch_array($run2);
-           $bname=$row1['bname'];
+          if($row1){
+            $bname=$row1['bname'];
            $seat=$row1['no_seat'];
            $time=$row1['time'];
+          }
   $sql="SELECT * FROM booking_det WHERE bus_id='$bid' ";
   $run=mysqli_query($con,$sql);
   if (mysqli_num_rows($run)==0) {
