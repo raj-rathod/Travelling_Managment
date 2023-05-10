@@ -247,7 +247,7 @@ if (isset($_POST['booking'])) {
           $sql="SELECT * FROM ticket WHERE uid='$uid'AND pname='$name'AND jdate='$jid' AND bus_id='$bid'  ";
           $run=mysqli_query($con,$sql);
           if (mysqli_num_rows($run)>0) {
-          	echo "Your ticket is ALREADY booked  please your ticket";
+          	echo "Your ticket is ALREADY booked  please check your ticket";
           
           }else{
           $sql="INSERT INTO `ticket` (`tid`, `bus_id`, `uid`, `seat_no`, `no_seat`, `ticket_status`, `jdate`, `booking_date`, `pname`) VALUES (NULL, '$bid', '$uid', '$tseatno', '$no_p', 'Conform', '$jid', '$date', '$name')";
@@ -384,7 +384,7 @@ if (isset($_POST['bkd'])) {
   if (mysqli_num_rows($run)==0) {
     echo "<h4 class='text-center text-white'>Result Not Found</h4>";
   }else{
-    $row=mysqli_fetch_array($run);
+    while($row=mysqli_fetch_array($run)){
     $vacant=$row['vacant'];
     $booked=$seat-$vacant;
     $jdate=$row['jdate'];
@@ -411,6 +411,7 @@ if (isset($_POST['bkd'])) {
           </div>
         
         </div>";
+    }
 
   }
 }
@@ -420,7 +421,11 @@ if (isset($_POST['tbkd'])) {
    $sql2="SELECT * FROM bus_details WHERE bus_id='$bid'";
           $run2=mysqli_query($con,$sql2);
           $row1=mysqli_fetch_array($run2);
-          $fare=$row1['fare'];
+          if($row1){
+             $fare=$row1['fare'];
+          }else{
+            $fare = 0;
+          }
    $sql="SELECT * FROM ticket WHERE bus_id='$bid'AND jdate='$pdate'";
     $run=mysqli_query($con,$sql);
     if (mysqli_num_rows($run)==0) {

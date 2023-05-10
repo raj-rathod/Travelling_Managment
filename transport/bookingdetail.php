@@ -66,7 +66,7 @@ if(!isset($_SESSION['aname'])){
          </div>
        </div>
         <div class="col-md-3"></div>
-    </div>
+</div>
   <div class="container-fluid mt-5" id="bookeddate">
     <div class="card" >
       <h2 class="text-center ">Passenger Details </h2>
