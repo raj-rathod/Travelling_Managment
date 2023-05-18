@@ -1,5 +1,7 @@
-# Travelling Managment
->it's mini project for database management(DBMS) using mysql , its basically for Travelling managment, User can search a bus for travelling and book ticket online
+# Online Bus Ticket Booking System for Travel Management
+>The Online Bus Ticket Booking System for Travel Management is a mini project that aims to provide a convenient and user-friendly platform for travelers to search and book bus tickets online. This project utilizes the power of database management using MySQL to store and manage the necessary information related to buses, routes, schedules, and bookings.
+
+The system allows users to search for buses based on their desired origin and destination, along with the preferred travel date. Upon entering these details, the system retrieves relevant information from the database and displays available bus options, including departure time, duration, fare, and seat availability.
 
 ### Technology used :
          
